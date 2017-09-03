@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{75EFEC83-7A57-4C40-B209-0D28FF405965}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PalringoApi</RootNamespace>
+    <AssemblyName>PalringoApi</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="zlibnet, Version=1.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\zlibnet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Networking\Client.cs" />
+    <Compile Include="Networking\Delegates.cs" />
+    <Compile Include="Networking\Packet.cs" />
+    <Compile Include="Networking\Packet.Watch.cs" />
+    <Compile Include="Networking\PacketChunkanizer.cs" />
+    <Compile Include="Networking\PacketHandling\Handlers\AdminActionHandler.cs" />
+    <Compile Include="Networking\PacketHandling\Handlers\AuthHandler.cs" />
+    <Compile Include="Networking\PacketHandling\Handlers\BalanceQueryHandler.cs" />
+    <Compile Include="Networking\PacketHandling\Handlers\GhostedHandler.cs" />
+    <Compile Include="Networking\PacketHandling\Handlers\GroupUpdateHandler.cs" />
+    <Compile Include="Networking\PacketHandling\Handlers\LoginFailedHandler.cs" />
+    <Compile Include="Networking\PacketHandling\Handlers\MessageHandler.cs" />
+    <Compile Include="Networking\PacketHandling\Handlers\PingHandler.cs" />
+    <Compile Include="Networking\PacketHandling\Handlers\ResponseHandler.cs" />
+    <Compile Include="Networking\PacketHandling\Handlers\SubProfileHandler.cs" />
+    <Compile Include="Networking\PacketHandling\Handlers\SubProfileQueryResultHandler.cs" />
+    <Compile Include="Networking\PacketHandling\Handlers\ThrottleHandler.cs" />
+    <Compile Include="Networking\PacketHandling\IPacketHandler.cs" />
+    <Compile Include="Networking\PacketHandling\PacketHandler.cs" />
+    <Compile Include="Networking\PacketHandling\PacketMap\PacketHeader.cs" />
+    <Compile Include="Networking\PacketHandling\PacketMap\PacketMapper.cs" />
+    <Compile Include="Networking\PacketHandling\PacketMap\PacketPayload.cs" />
+    <Compile Include="Networking\PacketHandling\Processor.cs" />
+    <Compile Include="Networking\PacketParser.cs" />
+    <Compile Include="Networking\PacketTemplates.cs" />
+    <Compile Include="PacketData\AdminAction.cs" />
+    <Compile Include="PacketData\GroupUpdate.cs" />
+    <Compile Include="PacketData\Message.cs" />
+    <Compile Include="PacketData\Response.cs" />
+    <Compile Include="PalBot.Async.cs" />
+    <Compile Include="PalBot.cs" />
+    <Compile Include="PalBot.PacketSenders.cs" />
+    <Compile Include="PalBot.TranslationHandling.cs" />
+    <Compile Include="PluginManagement\IManager.cs" />
+    <Compile Include="PluginManagement\MethodInstance.cs" />
+    <Compile Include="PluginManagement\Permissions\AllowedPermission.cs" />
+    <Compile Include="PluginManagement\Permissions\AuthorizationEngine.cs" />
+    <Compile Include="PluginManagement\Permissions\FailedPermissionsReport.cs" />
+    <Compile Include="PluginManagement\Permissions\IPermissionEngine.cs" />
+    <Compile Include="PluginManagement\Permissions\PermissionEngine.cs" />
+    <Compile Include="PluginManagement\PluginManager.cs" />
+    <Compile Include="PluginManagement\SendersInstance.cs" />
+    <Compile Include="PluginManagement\TranslationHandling\Loaders\ILoader.cs" />
+    <Compile Include="PluginManagement\TranslationHandling\Loaders\LoadFromJson.cs" />
+    <Compile Include="PluginManagement\TranslationHandling\Loaders\LoadFromOutside.cs" />
+    <Compile Include="PluginManagement\TranslationHandling\Loaders\LoadFromXml.cs" />
+    <Compile Include="PluginManagement\TranslationHandling\Models\Translation.cs" />
+    <Compile Include="PluginManagement\TranslationHandling\TranslationHolder.cs" />
+    <Compile Include="PluginManagement\TypeInstance.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Static.cs" />
+    <Compile Include="Subprofile\ExtendedUser.cs" />
+    <Compile Include="Subprofile\Group.cs" />
+    <Compile Include="Subprofile\GroupId.cs" />
+    <Compile Include="Subprofile\GroupUser.cs" />
+    <Compile Include="Subprofile\Parser.cs" />
+    <Compile Include="Subprofile\Parsing\ByteBuffer.cs" />
+    <Compile Include="Subprofile\Parsing\DataMap.cs" />
+    <Compile Include="Subprofile\Parsing\IParsable.cs" />
+    <Compile Include="Subprofile\Parsing\SubprofileAttribute.cs" />
+    <Compile Include="Subprofile\Types\AdminActions.cs" />
+    <Compile Include="Subprofile\Types\AuthStatus.cs" />
+    <Compile Include="Subprofile\Types\Code.cs" />
+    <Compile Include="Subprofile\Types\DataType.cs" />
+    <Compile Include="Subprofile\Types\Device.cs" />
+    <Compile Include="Subprofile\Types\DeviceType.cs" />
+    <Compile Include="Subprofile\Types\GroupCategory.cs" />
+    <Compile Include="Subprofile\Types\GroupOptions.cs" />
+    <Compile Include="Subprofile\Types\Language.cs" />
+    <Compile Include="Subprofile\Types\LookingFor.cs" />
+    <Compile Include="Subprofile\Types\MessageType.cs" />
+    <Compile Include="Subprofile\Types\Relationship.cs" />
+    <Compile Include="Subprofile\Types\Role.cs" />
+    <Compile Include="Subprofile\Types\Sex.cs" />
+    <Compile Include="Subprofile\Types\Status.cs" />
+    <Compile Include="Subprofile\Types\Tags.cs" />
+    <Compile Include="Subprofile\Types\Type.cs" />
+    <Compile Include="Subprofile\Types\UserRole.cs" />
+    <Compile Include="Subprofile\Types\What.cs" />
+    <Compile Include="Subprofile\User.cs" />
+    <Compile Include="Subprofile\UserId.cs" />
+    <Compile Include="Utilities\Auth.cs" />
+    <Compile Include="Utilities\CallBacks.cs" />
+    <Compile Include="Utilities\DataInputStream.cs" />
+    <Compile Include="Utilities\Events.cs" />
+    <Compile Include="Utilities\ImageService.cs" />
+    <Compile Include="Utilities\MaskedIntConverter.cs" />
+    <Compile Include="Utilities\MessageQueue.cs" />
+    <Compile Include="Utilities\MulitUserSelect.cs" />
+    <Compile Include="Utilities\Reg.cs" />
+    <Compile Include="Utilities\ReturnCall.cs" />
+    <Compile Include="Utilities\Salsa20.cs" />
+    <Compile Include="Utilities\Settings.cs" />
+    <Compile Include="Utilities\Timestamp.cs" />
+    <Compile Include="Utilities\VoiceMessage.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="lib\zlibnet.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

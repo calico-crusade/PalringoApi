@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PalringoApi", "PalringoApi\PalringoApi.csproj", "{75EFEC83-7A57-4C40-B209-0D28FF405965}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PalringoApi.Core", "PalringoApi.Core\PalringoApi.Core.csproj", "{B781CED5-629F-4F3F-A5F4-B399AFCF2F43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DotNetFramework", "DotNetFramework", "{0B0E9563-655A-4013-963B-74776F4C53FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DotNetCore", "DotNetCore", "{1A97089E-A293-44F5-92AB-21CA8F74BA93}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PalringoApi.Plugins", "PalringoApi.Plugins\PalringoApi.Plugins.csproj", "{E5141DCC-7E2D-4DFC-A53D-5E69903E591F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PalringoApi.Test", "PalringoApi.Test\PalringoApi.Test.csproj", "{36C9E70A-12AE-4AD0-83D3-E743CA47BA33}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75EFEC83-7A57-4C40-B209-0D28FF405965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75EFEC83-7A57-4C40-B209-0D28FF405965}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75EFEC83-7A57-4C40-B209-0D28FF405965}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75EFEC83-7A57-4C40-B209-0D28FF405965}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B781CED5-629F-4F3F-A5F4-B399AFCF2F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B781CED5-629F-4F3F-A5F4-B399AFCF2F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B781CED5-629F-4F3F-A5F4-B399AFCF2F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B781CED5-629F-4F3F-A5F4-B399AFCF2F43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5141DCC-7E2D-4DFC-A53D-5E69903E591F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5141DCC-7E2D-4DFC-A53D-5E69903E591F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5141DCC-7E2D-4DFC-A53D-5E69903E591F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5141DCC-7E2D-4DFC-A53D-5E69903E591F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36C9E70A-12AE-4AD0-83D3-E743CA47BA33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36C9E70A-12AE-4AD0-83D3-E743CA47BA33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36C9E70A-12AE-4AD0-83D3-E743CA47BA33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36C9E70A-12AE-4AD0-83D3-E743CA47BA33}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{75EFEC83-7A57-4C40-B209-0D28FF405965} = {0B0E9563-655A-4013-963B-74776F4C53FD}
+		{B781CED5-629F-4F3F-A5F4-B399AFCF2F43} = {1A97089E-A293-44F5-92AB-21CA8F74BA93}
+		{E5141DCC-7E2D-4DFC-A53D-5E69903E591F} = {0B0E9563-655A-4013-963B-74776F4C53FD}
+		{36C9E70A-12AE-4AD0-83D3-E743CA47BA33} = {0B0E9563-655A-4013-963B-74776F4C53FD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5D65AE8-C2A8-4304-AC0E-518B2E85041D}
+	EndGlobalSection
+EndGlobal
