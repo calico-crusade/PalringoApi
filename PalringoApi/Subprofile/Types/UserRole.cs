@@ -26,8 +26,12 @@
         /// </summary>
         Vip = 4,
         /// <summary>
+        /// Volunteer flag
+        /// </summary>
+        Volunteer = 5,
+        /// <summary>
         /// THE LITTERAL WORST
         /// </summary>
-        Staff = 5
+        Staff = 6
     }
 }

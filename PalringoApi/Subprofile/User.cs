@@ -2,6 +2,7 @@
 using PalringoApi.Subprofile.Parsing;
 using PalringoApi.Subprofile.Types;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace PalringoApi.Subprofile
 {
@@ -25,7 +26,15 @@ namespace PalringoApi.Subprofile
         /// <summary>
         /// This contains what their <see cref="Tags"/>
         /// </summary>
-        public uint Privileges { get; set; }
+        public uint Privileges
+        {
+            get { return (uint)PrivilegeTags; }
+            set { PrivilegeTags = (Tags)value; }
+        }
+        /// <summary>
+        /// Represents their <see cref="Tags"/> 
+        /// </summary>
+        public Tags PrivilegeTags { get; set; }
         /// <summary>
         /// This is an older version of Rep Level
         /// </summary>
@@ -51,6 +60,8 @@ namespace PalringoApi.Subprofile
             {
                 if (Staff)
                     return UserRole.Staff;
+                if (Volunteer)
+                    return UserRole.Volunteer;
                 if (Vip)
                     return UserRole.Vip;
                 if (Agent)
@@ -80,86 +91,45 @@ namespace PalringoApi.Subprofile
         /// <summary>
         /// All of the tags the user has
         /// </summary>
-        public List<Tags> PrivTags
-        {
-            get
-            {
-                var tag = new List<Tags>();
-                if (Premium) tag.Add(Tags.Premium);
-                if (Staff) tag.Add(Tags.Staff);
-                if (Agent) tag.Add(Tags.Agent);
-                if (SuperAdmin) tag.Add(Tags.SuperAdmin);
-                if (Vip) tag.Add(Tags.Vip);
-                if (ValidEmail) tag.Add(Tags.ValidEmail);
-                if (AlphaTester) tag.Add(Tags.AlphaTester);
-                if (Pest) tag.Add(Tags.Pest);
-                return tag;
-            }
-        }
+        public List<Tags> PrivTags => Tags.Agent.AllFlags().Where(t => PrivilegeTags.HasFlag(t)).ToList();
 
         /// <summary>
         /// 
         /// </summary>
-        public bool Premium
-        {
-            get { return (Privileges & 0x100000) != 0; }
-        }
+        public bool Premium => PrivilegeTags.HasFlag(Tags.Premium);
         /// <summary>
         /// 
         /// </summary>
-        public bool Staff
-        {
-            get { return (Privileges & 0x1000) != 0; }
-        }
+        public bool Staff => PrivilegeTags.HasFlag(Tags.Staff);
         /// <summary>
         /// 
         /// </summary>
-        public bool Agent
-        {
-            get { return (Privileges & 0x10000000) != 0; }
-        }
+        public bool Agent => PrivilegeTags.HasFlag(Tags.Agent);
         /// <summary>
         /// 
         /// </summary>
-        public bool SuperAdmin
-        {
-            get { return (Privileges & 0x10000) != 0; }
-        }
+        public bool SuperAdmin => PrivilegeTags.HasFlag(Tags.SuperAdmin);
         /// <summary>
         /// 
         /// </summary>
-        public bool Vip
-        {
-            get { return (Privileges & 0x200000) != 0; }
-        }
+        public bool Vip => PrivilegeTags.HasFlag(Tags.Vip);
         /// <summary>
         /// 
         /// </summary>
-        public bool ValidEmail
-        {
-            get { return (Privileges & 0x80000) != 0; }
-        }
+        public bool ValidEmail => PrivilegeTags.HasFlag(Tags.ValidEmail);
         /// <summary>
         /// 
         /// </summary>
-        public bool AlphaTester
-        {
-            get { return (Privileges & 0x800) != 0; }
-        }
+        public bool AlphaTester => PrivilegeTags.HasFlag(Tags.AlphaTester);
         /// <summary>
         /// 
         /// </summary>
-        public bool Pest
-        {
-            get { return (Privileges & 0x40000) != 0; }
-        }
+        public bool Pest => PrivilegeTags.HasFlag(Tags.Pest);
+        public bool Volunteer => PrivilegeTags.HasFlag(Tags.Volunteer);
         /// <summary>
         /// 
         /// </summary>
-        public bool HasTag
-        {
-            get { return Staff || Agent || SuperAdmin || Vip || AlphaTester; }
-        }
+        public bool HasTag => Staff || Agent || SuperAdmin || Vip || AlphaTester || Volunteer;
 
         /// <summary>
         /// You can subscribe to this to get when the user profile updates

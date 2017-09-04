@@ -142,6 +142,7 @@
     <Compile Include="Utilities\ReturnCall.cs" />
     <Compile Include="Utilities\Salsa20.cs" />
     <Compile Include="Utilities\Settings.cs" />
+    <Compile Include="Utilities\TagDisector.cs" />
     <Compile Include="Utilities\Timestamp.cs" />
     <Compile Include="Utilities\VoiceMessage.cs" />
   </ItemGroup>

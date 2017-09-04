@@ -36,6 +36,10 @@
         /// <summary>
         /// Lol, my tag all day erryday
         /// </summary>
-        Pest = 0x40000
+        Pest = 0x40000,
+        /// <summary>
+        /// Volunteer tag
+        /// </summary>
+        Volunteer = 4
     }
 }
