@@ -30,11 +30,11 @@ namespace PalringoApi.Networking.PacketHandling.Handlers
             if (!group.Exists)
                 return;
 
-            if (!group.Members.ContainsKey(action.SourceId))
+            if (!group.Members.ContainsKey(action.SourceId) || !group.Members.ContainsKey(action.TargetId))
                 return;
 
             var userRole = action.Action.ToRole();
-            group.Members[action.SourceId].UserRole = userRole;
+            group.Members[action.TargetId].UserRole = userRole;
         }
     }
 }
