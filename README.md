@@ -1,5 +1,5 @@
 # Obsoleted & Deprecated
-I have moved the library to .net standard, and in doing so, I completely re-wrote the library. You can find the new library [Here](https://github.com/calico-crusade/palringo-api-std). I will not be supporting / updating / modifying this repo. I will still accept pull requests if people want me too.
+I have moved the library to .net standard, and in doing so, I completely re-wrote the library. You can find the new library [Here](https://github.com/calico-crusade/palringo-api-std). I will not be supporting / updating / modifying this repo. 
 
 # PalringoApi
 A useful library made for connection to the Palringo Instant messaging service.
